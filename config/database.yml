@@ -1,0 +1,27 @@
+
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: MK1_development
+  pool: 5
+  username: postgres
+  password: 123
+
+test:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: MK1_test
+  pool: 5
+  username: postgres
+  password: 123
+
+production:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: MK1_production
+  pool: 5
+  username: postgres
+  password: 123
