@@ -11,9 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20131216232018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mk1s", force: true do |t|
+    t.string   "instagram_id"
+    t.string   "instagram_link"
+    t.string   "pic_thumb"
+    t.string   "pic_med"
+    t.string   "pic_large"
+    t.string   "fullname"
+    t.string   "username"
+    t.boolean  "publicado",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
