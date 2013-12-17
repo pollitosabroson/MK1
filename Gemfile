@@ -27,3 +27,7 @@ group :development do
   gem 'guard'
   gem 'guard-livereload'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
