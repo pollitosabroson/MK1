@@ -1,2 +1,12 @@
-%h1 Admin#admin
-%p Find me in app/views/admin/admin.html.haml
+%ul
+  - @fotos.each do |foto|
+    %li
+      = image_tag foto.pic_thumb, :width => 150, :height => 150
+      %p
+        = link_to "@#{foto.username}", foto.instagram_link, :target => 'blank'
+      - if foto.publicado
+        .aprobado
+          %a.icon{:href => admin_foto_path(foto.id, 0)}
+      - else
+        .desaprobado
+          %a.icon{:href => admin_foto_path(foto.id, 1)}

@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{:charset => "UTF-8"}
+    %title #BeBenetton
+    %meta{:content => "#BeBenetton", :property => "og:title"}
+    %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}
+    %meta{:name => "description", :content => "#BeBenetton. Tómate una foto, participa y gana $10,000 pesos para comprarte toda la ropa de Benetton que quieras."}
+    %meta{:content => "#BeBenetton. Tómate una foto, participa y gana $10,000 pesos para comprarte toda la ropa de Benetton que quieras.", :property => "og:description"}
+    %meta{:content => "http://bebenetton.mx", :property => "og:url"}
+    %meta{:content => "#BeBenetton", :property => "og:site_name"}
+    %meta{:content => '/social.jpg', :property => "og:image"}
+    %meta{:content => "IE=Edge", "http-equiv" => "X-UA-Compatible"}
+    = stylesheet_link_tag    "application", :media => "all"
+    = csrf_meta_tags
+  %body
+    #benetton
+      #admin
+        %ul#menu
+          %li=link_to "Home", root_path
+          %li=link_to "Listar Fotos", admin_path
+          %li=link_to "Actualizar manualmente", manual_path
+          %li=link_to "Ver 50 ganadores", ganadores_path
+          %li
+            %a{:href => '#'}
+              Total de fotos:
+              = "#{Mk1.where(:publicado => true).count}/#{Mk1.count}"
+        = yield
+    = javascript_include_tag "application"

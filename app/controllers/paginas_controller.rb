@@ -1,6 +1,6 @@
 class PaginasController < ApplicationController
   def home
-    @fotos = Sephoragram.order('created_at DESC').all
+    @fotos = Mk1.order('created_at DESC').all
   end
 
   def new_stuff
@@ -8,7 +8,7 @@ class PaginasController < ApplicationController
       handler.on_tag_changed do |tag, data|
         @inst = Instagram.tag_recent_media("mk1");
         @inst.each do |data|
-          sephoragram = Sephoragram.find_or_create_by_instagram_id(
+          mkfoto = Mk1.find_or_create_by_instagram_id(
             :instagram_id => data.id,
             :instagram_link => data.link,
             :pic_thumb => data.images.thumbnail.url,
@@ -17,7 +17,7 @@ class PaginasController < ApplicationController
             :fullname => data.user.full_name,
             :username => data.user.username
           )
-          sephoragram.save
+          mkfoto.save
         end
       end
     end
