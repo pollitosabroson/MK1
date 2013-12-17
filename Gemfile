@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'newrelic_rpm'
 gem 'instagram'
 gem 'protected_attributes'
+gem 'unicorn'
 
 group :doc do
   gem 'sdoc', require: false

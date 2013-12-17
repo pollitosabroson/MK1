@@ -31,4 +31,10 @@ class AdminController < ApplicationController
     end
     redirect_to admin_path
   end
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic do |user, password| 
+        session[:admin]= (user == ENV['username'] && password == ENV['password'])
+    end
+  end
 end
