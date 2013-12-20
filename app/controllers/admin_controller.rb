@@ -16,7 +16,7 @@ class AdminController < ApplicationController
     end
   end
   def manual_update
-    Instagram.tag_recent_media("mk1").data.each do |dato|
+    Instagram.tag_recent_media("mk1").each do |dato|
       foto = Mk1.find_or_create_by_instagram_id(
         :instagram_id => dato.id,
         :instagram_link => dato.link,
