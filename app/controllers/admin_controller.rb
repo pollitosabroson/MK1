@@ -16,16 +16,15 @@ class AdminController < ApplicationController
     end
   end
   def manual_update
-    Instagram.tag_recent_media("mk1").data.each do |data|
-      puts data.inspect
+    Instagram.tag_recent_media("mk1").data.each do |dato|
       foto = Mk1.find_or_create_by_instagram_id(
-        :instagram_id => data.id,
-        :instagram_link => data.link,
-        :pic_thumb => data.images.thumbnail.url,
-        :pic_med => data.images.low_resolution.url,
-        :pic_large => data.images.standard_resolution.url,
-        :fullname => data.user.full_name,
-        :username => data.user.username
+        :instagram_id => dato.id,
+        :instagram_link => dato.link,
+        :pic_thumb => dato.images.thumbnail.url,
+        :pic_med => dato.images.low_resolution.url,
+        :pic_large => dato.images.standard_resolution.url,
+        :fullname => dato.user.full_name,
+        :username => dato.user.username
       )
       foto.save
     end
