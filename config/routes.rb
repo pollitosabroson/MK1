@@ -4,6 +4,8 @@ root :to => 'paginas#home'
   get '/admin' => 'admin#admin', :as => 'admin'
   get '/admin/foto/:id/:type' => 'admin#foto', :as => 'admin_foto'
   get '/manual', :to => 'admin#manual_update', :as => 'manual'
+  get '/aprovadas' , :to => 'admin#aprovado', :as => 'aprovado'
+  #Paginas
   get '/ver/:id', :to => 'paginas#show', :as => 'ver'
   
 end

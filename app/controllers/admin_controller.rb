@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def admin
-    @fotos = Mk1.order('created_at DESC').all
+     @fotos = Mk1.where(:publicado => false).order('created_at DESC').all
   end
   def foto
     type = params[:type]
@@ -29,6 +29,9 @@ class AdminController < ApplicationController
       foto.save
     end
     redirect_to admin_path
+  end
+  def aprovado
+    @fotos = Mk1.where(:publicado => true).order('created_at DESC').all
   end
   private
   def authenticate
