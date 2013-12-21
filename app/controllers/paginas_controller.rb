@@ -31,15 +31,20 @@ class PaginasController < ApplicationController
   end
   def comment
     @comment = Commnet.new params_comment
-    @comment.post_id = params[:id]
+    raise @comment.inspect
     if @comment.save
       redirect_to ver_path(params[:id])
     else
-      
+      render :show
     end
-    
+  end
+  def ranking
+    #@ranking Ranking.new params_ranking
   end
   def params_comment
     params.require(:commnet).permit(:post_id, :usuario_id, :padre, :comentario, :publicado, :positive, :negative)
+  end
+  def params_ranking
+    params.require(:ranking).permit(:post_id, :usuario_id, :raiting)
   end
 end

@@ -1,5 +1,32 @@
-ul{
-  li{
-  	list-style: none;
+
+@media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+  .section{
+  	width: 70%;
+  	display: inline-block;
+  }
+  .aside{
+  	width: 29%;
+  	display: inline-block;
+  	height: 500px;
+  	background: red;
+  	vertical-align: top;
+  }
+  .vista{
+  	text-align: center;
+    ul{
+      li{
+        width: 600px;
+        height: 600px;
+        a{
+          text-decoration: none;
+          font-size:2em;
+        }
+      }
+    }
   }
 }

@@ -2,8 +2,7 @@
   %ul
     - @fotos.each do |foto|
       %li.thumb
-        %h2
-          = link_to "Picture by: @#{foto.username}", foto.instagram_link, :target => 'blank'
+        %h1= link_to "Picture by: @#{foto.username}", foto.instagram_link, :target => 'blank'
 
-        = link_to image_tag(foto.pic_large, :width => 450, :height => 450),ver_path(foto), :"data-id" => foto.instagram_id
+        = link_to image_tag(foto.pic_large, :width => "90%", :height => "90%"),ver_path(foto), :"data-id" => foto.instagram_id
         
