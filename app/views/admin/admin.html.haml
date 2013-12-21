@@ -1,9 +1,7 @@
 %ul
   - @fotos.each do |foto|
     %li
-      = image_tag foto.pic_thumb, :width => 150, :height => 150
-      %p
-        = link_to "@#{foto.username}", foto.instagram_link, :target => 'blank'
+      = image_tag foto.pic_thumb, :width => 250, :height => 250
       - if foto.publicado
         .aprobado
           %a.icon{:href => admin_foto_path(foto.id, 0)}

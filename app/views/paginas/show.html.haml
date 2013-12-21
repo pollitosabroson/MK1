@@ -1,0 +1,6 @@
+#ver
+  %ul
+    %li 
+      = link_to image_tag(@fotos.pic_large),@fotos.instagram_link, :target => 'blank', :"data-id" => @fotos.instagram_id
+      %p
+        = link_to "@#{@fotos.username}", @fotos.instagram_link, :target => 'blank'

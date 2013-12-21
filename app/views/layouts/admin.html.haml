@@ -14,13 +14,11 @@
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
-    #benetton
+    #mk1
       #admin
         %ul#menu
           %li=link_to "Home", root_path
-          %li=link_to "Listar Fotos", admin_path
           %li=link_to "Actualizar manualmente", manual_path
-          %li=link_to "Ver 50 ganadores", ganadores_path
           %li
             %a{:href => '#'}
               Total de fotos:

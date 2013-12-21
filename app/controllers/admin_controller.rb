@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   def foto
     type = params[:type]
     id = params[:id]
-    foto = Foto.find(id)
+    foto = Mk1.find(id)
     if type == "1"
       foto.publicado = true
     elsif type == "0"

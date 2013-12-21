@@ -1,6 +1,6 @@
 class PaginasController < ApplicationController
   def home
-    @fotos = Mk1.order('created_at DESC').all
+    @fotos = Mk1.where(:publicado => true).order('created_at DESC').all
   end
 
   def new_stuff
@@ -22,6 +22,9 @@ class PaginasController < ApplicationController
       end
     end
     render :text => ""
+  end
+  def show
+    @fotos = Mk1.find params[:id]
   end
 
   def suscribir
