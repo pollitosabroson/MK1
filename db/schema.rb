@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131216232018) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "mk1s", force: true do |t|
     t.string   "instagram_id"
     t.string   "instagram_link"
@@ -25,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131216232018) do
     t.string   "fullname"
     t.string   "username"
     t.boolean  "publicado",      default: false
+    t.integer  "visit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

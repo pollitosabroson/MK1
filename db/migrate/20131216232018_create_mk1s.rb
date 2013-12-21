@@ -9,6 +9,7 @@ class CreateMk1s < ActiveRecord::Migration
       t.string :fullname
       t.string :username
       t.boolean :publicado, :default => false
+      t.integer :visit
 
       t.timestamps
     end
