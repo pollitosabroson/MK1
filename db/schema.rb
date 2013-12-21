@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131221195610) do
+ActiveRecord::Schema.define(version: 20131221202701) do
 
   create_table "commnets", force: true do |t|
     t.integer  "padre"
     t.text     "comentario"
     t.boolean  "publicado",  default: true
     t.integer  "post_id"
-    t.integer  "ranking"
+    t.integer  "positive"
+    t.integer  "negative"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +34,14 @@ ActiveRecord::Schema.define(version: 20131221195610) do
     t.string   "username"
     t.boolean  "publicado",      default: false
     t.integer  "visit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rankings", force: true do |t|
+    t.integer  "usuario_id"
+    t.integer  "post_id"
+    t.integer  "raiting"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

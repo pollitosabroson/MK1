@@ -5,7 +5,8 @@ class CreateCommnets < ActiveRecord::Migration
       t.text :comentario
       t.boolean :publicado, :default => true
       t.integer :post_id
-      t.integer :ranking
+      t.integer :positive
+      t.integer :negative
 
       t.timestamps
     end

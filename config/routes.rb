@@ -7,7 +7,7 @@ root :to => 'paginas#home'
   get '/aprobadas' , :to => 'admin#aprovado', :as => 'aprovado'
   #Paginas
   get '/ver/:id', :to => 'paginas#show', :as => 'ver'
-  post '/ver/:id/comment', :to => 'paginas#comment', :as => 'comment_post'
-  post '/ver/:id/ranking', :to => 'paginas#ranking', :as => 'ranking_post'
+  post '/ver/:id/comment', :to => 'paginas#comment', :as => 'comment_pagina'
+  post '/ver/:id/ranking', :to => 'paginas#ranking', :as => 'ranking_pagina'
   
 end

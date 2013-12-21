@@ -1,7 +1,7 @@
 #ver
   %ul
     %li 
-      = link_to image_tag(@fotos.pic_large),@fotos.instagram_link, :target => 'blank', :"data-id" => @fotos.instagram_id
+      = link_to image_tag(@fotos.pic_large, :width => 640, :height => 640),@fotos.instagram_link, :target => 'blank', :"data-id" => @fotos.instagram_id
       %h2
         = link_to "Picture by: @#{@fotos.username}", @fotos.instagram_link, :target => 'blank'
   %p
@@ -9,15 +9,10 @@
     = @res
     = render 'votes/ranking'
   .comentarios
-    - if flash[:notice]
-      #modal
-        %h2 ¡Muchas gracias!
-        %p Tu comentario será revisado y aprobado en breve.
-        %a#cerrar{:href=>"#"} Cerrar
-    %h3 Deja un comentario
+    %h3 It leaves your comment.
     = render 'comment/comments'
     - if @comments.empty?
-      %p.note Sin comentarios por el momento.
+      %p.note Without comments for the present time.
     - else
       %ul.comentarios
         - @comments.each do |c|

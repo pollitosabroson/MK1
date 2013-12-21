@@ -1,1 +1,6 @@
-_comments.html.haml
+= form_for @comment, :url => comment_pagina_path do |f|
+  %p
+    = f.label :comentario
+    = f.text_area "Comentar", :comentario
+  %p
+    =f.submit! "Comentar"

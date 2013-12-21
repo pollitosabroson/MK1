@@ -28,10 +28,5 @@ class PaginasController < ApplicationController
     @comment = Commnet.new
     @comments = Commnet.where('publicado = true')
     #@fotos.increment
-
-  end
-
-  def suscribir
-    render :text => "#{params['hub.challenge']}"
   end
 end
