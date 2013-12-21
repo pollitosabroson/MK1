@@ -1,6 +1,6 @@
 = form_for @comment, :url => comment_pagina_path do |f|
   %p
-    = f.label :comentario
-    = f.text_area "Comentar", :comentario
+    = f.label"Comment"
+    = f.text_area :comentario
   %p
-    =f.submit! "Comentar"
+    =f.submit "Comment"

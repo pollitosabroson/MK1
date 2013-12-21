@@ -26,7 +26,20 @@ class PaginasController < ApplicationController
   def show
     @fotos = Mk1.find params[:id]
     @comment = Commnet.new
-    @comments = Commnet.where('publicado = true')
+    @comments = Commnet.where(:publicado => true, :post_id => params[:id]).order('created_at DESC')
     #@fotos.increment
+  end
+  def comment
+    @comment = Commnet.new params_comment
+    @comment.post_id = params[:id]
+    if @comment.save
+      redirect_to ver_path(params[:id])
+    else
+      
+    end
+    
+  end
+  def params_comment
+    params.require(:commnet).permit(:post_id, :usuario_id, :padre, :comentario, :publicado, :positive, :negative)
   end
 end
