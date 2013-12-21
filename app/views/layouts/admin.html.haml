@@ -19,11 +19,11 @@
         %ul#menu
           %li=link_to "Home", root_path
           %li=link_to "Actualizar manualmente", manual_path
-          %li= link_to "Por aprovar ",admin_path
+          %li= link_to "Por aprobar ",admin_path
           %li
             %a{:href => '#'}
               Total de fotos:
               = "#{Mk1.where(:publicado => true).count}/#{Mk1.count}"
-          %li= link_to "Aprovadas",aprovado_path
+          %li= link_to "Aprobadas",aprovado_path
         = yield
     = javascript_include_tag "application"

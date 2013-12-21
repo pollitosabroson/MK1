@@ -14,8 +14,13 @@
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
+    .header
+      %ul 
+        %li= link_to "Mk1", root_path
+        %li= link_to "Home", root_path
+        %li= link_to "It Takes Part","#"
+        %li= link_to "More Visit"
     .content
-      = link_to "Mk1", root_path
       = yield
     :plain
        <script>

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216232018) do
+ActiveRecord::Schema.define(version: 20131221195610) do
+
+  create_table "commnets", force: true do |t|
+    t.integer  "padre"
+    t.text     "comentario"
+    t.boolean  "publicado",  default: true
+    t.integer  "post_id"
+    t.integer  "ranking"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mk1s", force: true do |t|
     t.string   "instagram_id"

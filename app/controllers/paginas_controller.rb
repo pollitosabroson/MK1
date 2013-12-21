@@ -25,6 +25,10 @@ class PaginasController < ApplicationController
   end
   def show
     @fotos = Mk1.find params[:id]
+    @comment = Commnet.new
+    @comments = Commnet.where('publicado = true')
+    #@fotos.increment
+
   end
 
   def suscribir
