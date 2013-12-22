@@ -30,6 +30,10 @@ class AdminController < ApplicationController
     end
     redirect_to admin_path
   end
+  def delete
+    Mk1.where(:publicado => false).delete_all
+    redirect_to admin_path 
+  end
   def aprovado
     @fotos = Mk1.where(:publicado => true).order('created_at DESC').all
   end

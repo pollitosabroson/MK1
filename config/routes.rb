@@ -5,6 +5,7 @@ root :to => 'paginas#home'
   get '/admin/foto/:id/:type' => 'admin#foto', :as => 'admin_foto'
   get '/manual', :to => 'admin#manual_update', :as => 'manual'
   get '/aprobadas' , :to => 'admin#aprovado', :as => 'aprovado'
+  get '/borrar', :to => 'admin#delete', :as => 'borrar'
   #Paginas
   get '/ver/:id', :to => 'paginas#show', :as => 'ver'
   post '/ver/:id/comment', :to => 'paginas#comment', :as => 'comment_pagina'
