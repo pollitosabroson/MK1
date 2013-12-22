@@ -14,6 +14,7 @@ gem 'newrelic_rpm'
 gem 'instagram'
 gem 'protected_attributes'
 gem 'turbolinks'
+gem 'kaminari'
 
 group :doc do
   gem 'sdoc', require: false

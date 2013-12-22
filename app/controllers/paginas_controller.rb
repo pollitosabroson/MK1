@@ -1,6 +1,6 @@
 class PaginasController < ApplicationController
   def home
-    @fotos = Mk1.where(:publicado => true).order('created_at DESC').all
+    @fotos = Mk1.where(:publicado => true).order('created_at DESC').page(params[:page]).per(10)
   end
 
   def new_stuff
