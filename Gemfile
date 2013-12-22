@@ -15,7 +15,8 @@ gem 'instagram'
 gem 'protected_attributes'
 gem 'turbolinks'
 gem 'kaminari'
-
+gem 'acts_as_commentable'
+gem 'strong_parameters'
 group :doc do
   gem 'sdoc', require: false
 end

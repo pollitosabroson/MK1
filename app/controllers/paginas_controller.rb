@@ -25,13 +25,13 @@ class PaginasController < ApplicationController
   end
   def show
     @fotos = Mk1.find params[:id]
-    @comment = Commnet.new
-    @comments = Commnet.where(:publicado => true, :post_id => params[:id]).order('created_at DESC')
+    @comment = Comment.new
+    @comments = Comment.where(:commentable_id => @fotos).order('created_at DESC')
     #@fotos.increment
   end
   def comment
-    @comment = Commnet.new params_comment
-    @comment.post_id = params[:id]
+    @mk1 = Mk1.find params[:id]
+    @comment = @mk1.comments.new params_comment    
     if @comment.save
       redirect_to ver_path(params[:id])
     else
@@ -42,7 +42,7 @@ class PaginasController < ApplicationController
     #@ranking Ranking.new params_ranking
   end
   def params_comment
-    params.require(:commnet).permit(:post_id, :usuario_id, :padre, :comentario, :publicado, :positive, :negative)
+    params.require(:comment).permit(:comment, :title)
   end
   def params_ranking
     params.require(:ranking).permit(:post_id, :usuario_id, :raiting)

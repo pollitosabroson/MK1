@@ -1,5 +1,6 @@
 class Mk1 < ActiveRecord::Base
   paginates_per 5
+  acts_as_commentable
   attr_accessible :instagram_id, :instagram_link, :pic_large, :pic_med, :pic_thumb, :username, :publicado, :fullname, :visit
   has_many :commnets
   def to_param
