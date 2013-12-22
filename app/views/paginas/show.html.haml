@@ -4,11 +4,15 @@
       = link_to image_tag(@fotos.pic_large, :width => 640, :height => 640),@fotos.instagram_link, :target => 'blank', :"data-id" => @fotos.instagram_id
       %h2
         = link_to "Picture by: @#{@fotos.username}", @fotos.instagram_link, :target => 'blank'
-  %p
+  %p.ranking
     Ranking
     = @res
     = render 'votes/ranking'
   .comentarios
+    - if @comment.errors.any?
+      %ul
+        - @comment.errors.full_messages.each do |message|
+          %li= message
     %h3 It leaves your comment.
     = render 'comment/comments'
     - if @comments.empty?

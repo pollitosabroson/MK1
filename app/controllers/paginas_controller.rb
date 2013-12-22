@@ -31,7 +31,7 @@ class PaginasController < ApplicationController
   end
   def comment
     @comment = Commnet.new params_comment
-    raise @comment.inspect
+    @comment.post_id = params[:id]
     if @comment.save
       redirect_to ver_path(params[:id])
     else

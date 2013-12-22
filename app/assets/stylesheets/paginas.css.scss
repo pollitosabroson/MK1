@@ -29,4 +29,21 @@
       }
     }
   }
+  .ranking{
+    text-align: right;
+    font-size: 1.3em;
+  }
+  .comentarios{
+    text-align: left;
+    p{
+      label{
+        vertical-align: top;
+      }
+      textarea{
+        vertical-align: bottom;
+        width: 100%;
+        height: 80px;
+      }
+    }
+  }
 }
