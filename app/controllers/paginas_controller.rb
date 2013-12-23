@@ -27,6 +27,7 @@ class PaginasController < ApplicationController
     @fotos = Mk1.find params[:id]
     @comment = Comment.new
     @comments = Comment.where(:commentable_id => @fotos).order('created_at DESC')
+    
     #@fotos.increment
   end
   def comment
@@ -39,14 +40,16 @@ class PaginasController < ApplicationController
     end
   end
   def upvote
-    @comment = Comment.find(params[:id])
+    @likes = Mk1.find(params[:id])
+    @likes.liked_by @user
     redirect_to ver_path(params[:id])
   end
 
-def downvote
-  @comment = Comment.find(params[:id])
-  redirect_to ver_path(params[:id])
-end
+  def downvote
+    @likes = Mk1.find(params[:id])
+    @likes.downvote_from @likes
+    redirect_to ver_path(params[:id])
+  end
   def ranking
     #@ranking Ranking.new params_ranking
   end

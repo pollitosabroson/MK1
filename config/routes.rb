@@ -10,7 +10,7 @@ root :to => 'paginas#home'
   get '/ver/:id', :to => 'paginas#show', :as => 'ver'
   post '/ver/:id/comment', :to => 'paginas#comment', :as => 'comment_pagina'
   post '/ver/:id/ranking', :to => 'paginas#ranking', :as => 'ranking_pagina'
-  post "/comment/:id/like", to: "paginas#upvote", :as =>'upvote_comment'
-  post "/comment/:id/dislike", to: "paginas#downvote", :as =>'downvote_comment'
+  get "/ver/:id/like", to: "paginas#upvote", :as =>'upvote'
+  get "/ver/:id/dislike", to: "paginas#downvote", :as =>'downvote'
   
 end

@@ -4,10 +4,9 @@
       = link_to image_tag(@fotos.pic_large, :width => 640, :height => 640),@fotos.instagram_link, :target => 'blank', :"data-id" => @fotos.instagram_id
       %h2
         = link_to "Picture by: @#{@fotos.username}", @fotos.instagram_link, :target => 'blank'
-  %p.ranking
-    = render 'votes/ranking'
-  %p.like= link_to"Like", upvote_comment_path
-  %p.notlike= link_to"Don't Like", downvote_comment_path
+  %p.like= link_to"Like", upvote_path
+  %p.notlike= link_to"Don't Like", downvote_path
+  %p= @fotos.likes.size
   .comentarios
     - if @comment.errors.any?
       %ul
