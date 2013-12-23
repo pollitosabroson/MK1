@@ -35,7 +35,7 @@ class AdminController < ApplicationController
     redirect_to admin_path 
   end
   def aprovado
-    @fotos = Mk1.where(:publicado => true).order('created_at DESC').all
+    @fotos = Mk1.where(:publicado => true).order('created_at DESC').page(params[:page]).per(12)
   end
   private
   def authenticate

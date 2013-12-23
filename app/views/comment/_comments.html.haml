@@ -1,6 +1,9 @@
 = form_for @comment, :url => comment_pagina_path do |f|
-  %p
-    = f.label"Comment"
-    = f.text_area :comment
+  %ul
+    %li.picture
+      = image_tag"home/noavatar.png"
+    %li.comments
+      %p
+        = f.text_area :comment, :placeholder => "It leaves your comment"
   %p
     =f.submit "Comment"

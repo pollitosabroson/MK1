@@ -16,7 +16,7 @@ gem 'protected_attributes'
 gem 'turbolinks'
 gem 'kaminari'
 gem 'acts_as_commentable'
-
+gem 'acts_as_votable', '~> 0.8.0'
 
 group :doc do
   gem 'sdoc', require: false

@@ -38,6 +38,15 @@ class PaginasController < ApplicationController
       render :show
     end
   end
+  def upvote
+    @comment = Comment.find(params[:id])
+    redirect_to ver_path(params[:id])
+  end
+
+def downvote
+  @comment = Comment.find(params[:id])
+  redirect_to ver_path(params[:id])
+end
   def ranking
     #@ranking Ranking.new params_ranking
   end

@@ -5,21 +5,26 @@
       %h2
         = link_to "Picture by: @#{@fotos.username}", @fotos.instagram_link, :target => 'blank'
   %p.ranking
-    Ranking
-    = @res
     = render 'votes/ranking'
+  %p.like= link_to"Like", upvote_comment_path
+  %p.notlike= link_to"Don't Like", downvote_comment_path
   .comentarios
     - if @comment.errors.any?
       %ul
         - @comment.errors.full_messages.each do |message|
           %li= message
-    %h3 It leaves your comment.
     = render 'comment/comments'
     - if @comments.empty?
       %p.note Without comments for the present time.
     - else
-      %ul.comentarios
+      %ul.coment
         - @comments.each do |c|
           %li
-            %h4
-              =c.comment
+            = image_tag("home/noavatar.png", :width => 40, :height => 40)
+            %p.name
+              Jose Alejandro
+            %br/ 
+            %p
+              =c.comment 
+            %p.date 
+              =c.created_at
