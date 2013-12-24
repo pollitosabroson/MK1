@@ -191,7 +191,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable
-  acts_as_votable (~> 0.8.0)
+  acts_as_votable
   coffee-rails (~> 4.0.0)
   devise
   guard

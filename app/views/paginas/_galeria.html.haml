@@ -4,4 +4,4 @@
       %li.thumb
         %h1= link_to "Picture by: @#{foto.username}", foto.instagram_link, :target => 'blank'
 
-        = link_to image_tag(foto.pic_large, :width => "90%", :height => "90%"),ver_path(foto), :"data-id" => foto.instagram_id
+        = link_to image_tag(foto.pic_large, :width => "90%", :height => "90%"),show_path(foto), :"data-id" => foto.instagram_id

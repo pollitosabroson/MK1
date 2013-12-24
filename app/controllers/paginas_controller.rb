@@ -27,31 +27,21 @@ class PaginasController < ApplicationController
     @fotos = Mk1.find params[:id]
     @comment = Comment.new
     @comments = Comment.where(:commentable_id => @fotos).order('created_at DESC')
-    
+    @ranking = Ranking.new
     #@fotos.increment
   end
   def comment
     @mk1 = Mk1.find params[:id]
     @comment = @mk1.comments.new params_comment    
     if @comment.save
-      redirect_to ver_path(params[:id])
+      redirect_to show_path(params[:id])
     else
       render :show
     end
   end
-  def upvote
-    @likes = Mk1.find(params[:id])
-    @likes.liked_by @user
-    redirect_to ver_path(params[:id])
-  end
-
-  def downvote
-    @likes = Mk1.find(params[:id])
-    @likes.downvote_from @likes
-    redirect_to ver_path(params[:id])
-  end
   def ranking
-    #@ranking Ranking.new params_ranking
+    @ranking = Ranking.new params_ranking
+    raise @ranking.inspect
   end
   def params_comment
     params.require(:comment).permit(:comment, :title)
