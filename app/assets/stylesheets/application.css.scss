@@ -3,6 +3,11 @@
  *= require_tree
  *= requiere reset
  */
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400italic);
+ body{
+//  background: rgb(207, 4, 4);
+  background: #000;
+ }
 .header{
   width: 1040px;
   margin: 0 auto;
@@ -15,6 +20,7 @@
   	  a{
   	  	text-decoration: none;
   	  	color:#fff;
+        font-size: 1.4em
   	  }
   	}
   }
@@ -22,11 +28,12 @@
 
 .content{
   width: 1040px;
-  height: 100%;
+  height: auto;
   min-height: 100%;
   margin: 0 auto;
   text-align: center;	
   margin-top: 20px;
+  background: #fff;
 }
 .footer{
   width: 1040px;

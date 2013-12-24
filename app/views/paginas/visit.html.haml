@@ -1,0 +1,4 @@
+- @visit.each do |v|
+  = link_to image_tag(v.pic_large, :width => 640, :height => 640),v.instagram_link, :target => 'blank', :"data-id" => v.instagram_id
+  %h2
+    = link_to "Picture by: @#{v.username}", v.instagram_link, :target => 'blank'

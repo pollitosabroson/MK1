@@ -11,5 +11,6 @@ root :to => 'paginas#home'
   get '/show/:id', :to => 'paginas#show', :as => 'show'
   post '/show/:id/comment', :to => 'paginas#comment', :as => 'comment_pagina'
   post '/show/:id/ranking', :to => 'paginas#ranking', :as => 'ranking_pagina'
+  get '/visit/', :to => 'paginas#visit', :as => 'visit' 
   
 end

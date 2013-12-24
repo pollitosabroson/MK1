@@ -5,26 +5,13 @@
 @media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 /* big landscape tablets, laptops, and desktops */
 @media (min-width:1025px) {
-  .like{
-    font-size: 0.8em;
-    text-align: left;
-    display: inline-block;
-    padding: 9px 0px 10px 600px;
-  }
-  .notlike{
-    font-size: 0.9em;
-    text-align: left;
-    display: inline-block;
-  }
   .section{
-  	width: 70%;
+  	width: 75%;
   	display: inline-block;
   }
   .aside{
-  	width: 29%;
+  	width: 24%;
   	display: inline-block;
-  	height: 500px;
-  	background: red;
   	vertical-align: top;
   }
   .vista{
@@ -32,10 +19,31 @@
     ul{
       li{
         width: 600px;
-        height: 600px;
+        height: auto;
+        .name{
+          background-color: rgb(207, 4, 4);
+          height: 38px;
+          position: relative;
+          text-align: left;
+          width: 100%;
+          z-index: 2;
+        }
+        .sombra{
+          border-color: transparent #a12c25 transparent transparent;
+          border-style: solid;
+          border-width: 0 30px 18px 0;
+          position: absolute;
+          width: 0;
+          z-index: 1;
+        }
         a{
           text-decoration: none;
           font-size:2em;
+          color: #FFEB00;
+        }
+        p{
+          display: inline-block;
+          padding: 15px;
         }
       }
     }
@@ -131,6 +139,76 @@
           text-align: right;
         }
       }
+    }
+  }
+  .ranking {
+    height: 70px;
+    position: relative;
+    .div_gauge {
+      background:rgb(255, 239, 60);
+      max-width: 160px;
+      height: 28px;
+      position: absolute;
+      z-index: 0;
+      transition: width 450ms;
+      -moz-transition: width 450ms;
+      -webkit-transition: width 450ms;
+      -ms-transition: width 450ms;
+      &.stars-1{
+        min-width:31px;
+        -moz-transition: width 450ms;
+        -webkit-transition: width 450ms;
+        -ms-transition: width 450ms;
+      }
+      &.stars-2{
+        min-width:62px;
+        -moz-transition: width 450ms;
+        -webkit-transition: width 450ms;
+        -ms-transition: width 450ms;
+      }
+      &.stars-3{
+        min-width:93px;
+        -moz-transition: width 450ms;
+        -webkit-transition: width 450ms;
+        -ms-transition: width 450ms;
+      }
+      &.stars-4{
+        min-width:124px;
+        -moz-transition: width 450ms;
+        -webkit-transition: width 450ms;
+        -ms-transition: width 450ms;
+      }
+      &.stars-5{
+        min-width:155px;
+        -moz-transition: width 450ms;
+        -webkit-transition: width 450ms;
+        -ms-transition: width 450ms;
+      }
+    }
+    .btn-estrella{
+      border: none;
+      width: 31px;
+      height: 28px;
+      background-image: url("comments/ranking.png");
+      background-color:transparent;
+      background-size: contain;
+      text-indent: -100px;
+      overflow: hidden;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      display: block;
+      float: left;
+      z-index: 2;
+      position: relative;
+      &.fill{
+        background-color: #FFF03D;
+      }
+    }
+    #new_ranking {
+      width: 155px;
+      position: absolute;
+      right: 0;
     }
   }
 }

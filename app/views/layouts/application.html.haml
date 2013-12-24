@@ -19,7 +19,7 @@
         %li= link_to "Mk1", root_path
         %li= link_to "Home", root_path
         %li= link_to "It Takes Part","#"
-        %li= link_to "More Visit"
+        %li= link_to "More Visit", visit_path
     .content
       .section
         = yield
@@ -36,4 +36,4 @@
         ga('send', 'pageview');
 
        </script>
-  = javascript_include_tag "application"
+= javascript_include_tag "application"

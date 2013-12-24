@@ -28,7 +28,7 @@ class PaginasController < ApplicationController
     @comment = Comment.new
     @comments = Comment.where(:commentable_id => @fotos).order('created_at DESC')
     @ranking = Ranking.new
-    #@fotos.increment
+    @fotos.increment
   end
   def comment
     @mk1 = Mk1.find params[:id]
@@ -40,13 +40,19 @@ class PaginasController < ApplicationController
     end
   end
   def ranking
-    @ranking = Ranking.new params_ranking
-    raise @ranking.inspect
+    @ranking = Ranking.new
+    @ranking.raiting = params[:commit].to_i.inspect
+    @ranking.post_id = params[:id]
+    if @ranking.save
+      redirect_to show_path(params[:id])
+    else
+      render :show
+    end
+  end
+  def visit
+    @visit =Mk1.order("visit DESC").last(5)
   end
   def params_comment
     params.require(:comment).permit(:comment, :title)
-  end
-  def params_ranking
-    params.require(:ranking).permit(:post_id, :usuario_id, :raiting)
   end
 end
