@@ -1,4 +1,11 @@
-- @visit.each do |v|
-  = link_to image_tag(v.pic_large, :width => 640, :height => 640),v.instagram_link, :target => 'blank', :"data-id" => v.instagram_id
-  %h2
-    = link_to "Picture by: @#{v.username}", v.instagram_link, :target => 'blank'
+.vista{:pagina => "visitas"} 
+  %ul
+    - @visit.each do |foto|
+      - stats = stats(foto.id);
+      %li.thumb
+        %h1.name= link_to "Picture by: @#{foto.username}", foto.instagram_link, :target => 'blank'
+        .sombra
+
+        = link_to image_tag(foto.pic_large, :width => "90%", :height => "90%"),show_path(foto), :"data-id" => foto.instagram_id
+        %p= "Date: "+foto.created_at.to_date.to_s
+        %p= "Comments "+ stats.comments.count.to_s
