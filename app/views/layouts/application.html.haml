@@ -2,13 +2,13 @@
 %html
   %head
     %meta{:charset => "UTF-8"}
-    %title MK1
+    %title Volkswagen GTI
     %meta{:content => "#MK1", :property => "og:title"}
     %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}
-    %meta{:name => "description", :content => "#MK1. ómale una foto a tu volkswagen en instagram y lucete ante la demas gente."}
-    %meta{:content => "#MK1. Tómale una foto a tu volkswagen en instagram y lucete ante la demas gente.", :property => "og:description"}
-    %meta{:content => "http://vwmk1.mx", :property => "og:url"}
-    %meta{:content => "#MK1", :property => "og:site_name"}
+    %meta{:name => "description", :content => "#GTI. Take a picture ofyourvolkswagenoninstagramand show offto the other people."}
+    %meta{:content => "#MK1. Take a picture ofyourvolkswagenoninstagramand show offto the other people.", :property => "og:description"}
+    %meta{:content => "http://www.volksgit.com", :property => "og:url"}
+    %meta{:content => "#VolkswagenGTI", :property => "og:site_name"}
     %meta{:content => '/social.jpg', :property => "og:image"}
     %meta{:content => "IE=Edge", "http-equiv" => "X-UA-Compatible"}
     = stylesheet_link_tag    "application", :media => "all"
@@ -16,7 +16,7 @@
   %body
     .header
       %ul 
-        %li= link_to "Mk1", root_path
+        %li= link_to "GTI", root_path
         %li= link_to "Home", root_path
         %li= link_to "It Takes Part","#"
         %li= link_to "More Visit", visit_path
@@ -26,14 +26,16 @@
       .aside
       .footer
     :plain
-       <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-8596932-3', 'vwmk1.com');
-        ga('send', 'pageview');
-
-       </script>
-= javascript_include_tag "application"
+      <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8596932-3']);
+      _gaq.push(['_setDomainName', 'volksgti.com']);
+      _gaq.push(['_trackPageview']);
+  
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
+    = javascript_include_tag "application"

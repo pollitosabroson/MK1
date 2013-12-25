@@ -38,8 +38,61 @@
   text-align: center;	
   margin-top: 20px;
   background: #fff;
+  margin-bottom: -150px;
 }
 .footer{
   width: 1040px;
   height: 150px;
+  background: #413E3E;
+}
+.pagination{
+  height: 30px;
+  font-size: 1.4em;
+  a{
+    color: #fff;
+  }
+  .current{
+    color: #BE7F3B;
+    background: #000;
+  }
+  .first{
+    background: #000;
+    height: 30px;
+  }
+  .prev{
+    background: #000;
+    height: 30px;
+  }
+  .page{
+    background: #000;
+    height: 30px;   
+  }
+  .next{
+    background: #000;
+  }
+  .last{
+    background: #000;
+  }
+}
+.vista{
+  ul{
+    li{
+      .name{
+        background-color: rgb(207, 4, 4);
+        height: 38px;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        z-index: 2;
+      }
+      .sombra{
+        border-color: transparent #a12c25 transparent transparent;
+        border-style: solid;
+        border-width: 0 30px 18px 0;
+        position: absolute;
+        width: 0;
+        z-index: 1;
+      }
+    }
+  }
 }
