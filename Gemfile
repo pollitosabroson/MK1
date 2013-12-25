@@ -16,7 +16,8 @@ gem 'protected_attributes'
 gem 'turbolinks'
 gem 'kaminari'
 gem 'acts_as_commentable'
-gem 'acts_as_votable'
+gem 'omniauth' 
+gem 'omniauth-facebook'
 
 group :doc do
   gem 'sdoc', require: false
