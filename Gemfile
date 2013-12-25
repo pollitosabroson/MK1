@@ -18,6 +18,7 @@ gem 'kaminari'
 gem 'acts_as_commentable'
 gem 'omniauth' 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 group :doc do
   gem 'sdoc', require: false
