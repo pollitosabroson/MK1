@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131225181154) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
     t.text     "comment"
@@ -65,6 +68,7 @@ ActiveRecord::Schema.define(version: 20131225181154) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
