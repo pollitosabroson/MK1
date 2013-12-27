@@ -21,8 +21,11 @@
         %li= link_to "It Takes Part","#"
         %li= link_to "More Visit", visit_path
         %li
-          %p= link_to "Sign up", new_user_registration_path
-          %p= link_to "Sign in", user_session_path
+          - if current_user.nil?
+            %p= link_to "Sign up", new_user_registration_path
+            %p= link_to "Sign in", user_session_path
+          - else
+            %p= link_to "Sign out", destroy_user_session_path
     .content
       .section
         = yield
