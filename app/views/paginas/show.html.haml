@@ -4,26 +4,46 @@
       = link_to image_tag(@fotos.pic_large, :width => 640, :height => 640),@fotos.instagram_link, :target => 'blank', :"data-id" => @fotos.instagram_id
       %h2
         = link_to "Picture by: @#{@fotos.username}", @fotos.instagram_link, :target => 'blank'
+    %li.social
+      .fb-share-button{"data-href" => "http://mk1.herokuapp.com/#{@fotos.id}"+"-"+"#{@fotos.username}", "data-type" => "box_count", "data-width" => "300px"}
+      %a.twitter-share-button{"data-dnt" => "true", "data-hashtags" => "GTI", "data-size" => "large", :href => "https://twitter.com/share"} Tweet
+      #fb-root
   .ranking
     %p Ranking
     = render'votes/ranking'
   .comentarios
-    - if @comment.errors.any?
-      %ul
-        - @comment.errors.full_messages.each do |message|
-          %li= message
-    = render 'comment/comments'
-    - if @comments.empty?
-      %p.note Without comments for the present time.
-    - else
-      %ul.coment
-        - @comments.each do |c|
-          %li
-            = image_tag("home/noavatar.png", :width => 40, :height => 40)
-            %p.name
-              Jose Alejandro
-            %br/ 
-            %p
-              =c.comment 
-            %p.date 
-              =c.created_at
+    - if current_user.nil?
+      %p.note We feel it only the registered users can leave comments.
+      - if @comment.errors.any?
+        %ul
+          - @comment.errors.full_messages.each do |message|
+            %li= message
+    -else
+      = render 'comment/comments'
+      - if @comments.empty?
+        %p.note Without comments for the present time.
+      - else
+        %ul.coment
+          - @comments.each do |c|
+            %li
+              = image_tag("home/noavatar.png", :width => 40, :height => 40)
+              %p.name
+                Jose Alejandro
+              %br/ 
+              %p
+                =c.comment 
+              %p.date 
+                =c.created_at
+:plain
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=183182198556809";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  </script>
