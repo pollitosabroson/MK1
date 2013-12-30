@@ -5,31 +5,38 @@
     %title Volkswagen GTI
     %meta{:content => "#MK1", :property => "og:title"}
     %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}
-    %meta{:name => "description", :content => "#GTI. Take a picture ofyourvolkswagenoninstagramand show offto the other people."}
-    %meta{:content => "#MK1. Take a picture ofyourvolkswagenoninstagramand show offto the other people.", :property => "og:description"}
+    %meta{:name => "description", :content => "#GTI. Take a picture of your volkswagen on instagramand show offto the other people."}
+    %meta{:content => "#MK1. Take a picture of your volkswagen on instagramand show offto the other people.", :property => "og:description"}
     %meta{:content => "http://www.volksgit.com", :property => "og:url"}
     %meta{:content => "#VolkswagenGTI", :property => "og:site_name"}
     %meta{:content => '/social.jpg', :property => "og:image"}
     %meta{:content => "IE=Edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
-    .header
-      %ul 
-        %li= link_to "GTI", root_path
-        %li= link_to "Home", root_path
-        %li= link_to "It Takes Part","#"
-        %li= link_to "More Visit", visit_path
-        %li
-          - if current_user.nil?
-            %p= link_to "Sign up", new_user_registration_path
-            %p= link_to "Sign in", user_session_path
-          - else
-            %p= link_to "Sign out", destroy_user_session_path
+    .row
+      .header
+        %ul.nav.nav-tab
+          %li
+            = link_to "GTI", root_path
+          %li
+            = link_to "Home", root_path
+          %li
+            = link_to "It Takes Part","#"
+          %li
+            = link_to "More Visit", visit_path
+          %li 
+            - if current_user.nil?
+              %p= link_to "Sign up", new_user_registration_path
+              %p= link_to "Sign in", user_session_path
+            - else
+              %p= link_to "Sign out", destroy_user_session_path
     .content
-      .section
-        = yield
-      .aside
+      .row
+        .col-md-8
+          = yield
+        .col-md-4
       .footer
     :plain
       <script type="text/javascript">

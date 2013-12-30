@@ -19,6 +19,7 @@ gem 'acts_as_commentable'
 gem 'omniauth' 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 group :doc do
   gem 'sdoc', require: false
