@@ -27,7 +27,6 @@ class PaginasController < ApplicationController
     @fotos = Mk1.find params[:id]
     @comment = Comment.new
     @comments = Comment.where(:commentable_id => @fotos).order('created_at DESC')
-    raise @comments.inspect
     @ranking = Ranking.new
     @fotos.increment
   end

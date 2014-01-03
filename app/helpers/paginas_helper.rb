@@ -9,8 +9,9 @@ module PaginasHelper
     return stats
 	end
 	def username(user_id)
-	  nom = User.find(:id => user_id)
-	 username = OpenStruct.new(json)
-	 return username
+	  nom = User.where(:id => user_id)
+	json ={ :user_id => nom}
+	username = OpenStruct.new(json)
+	return username
 	end
 end
