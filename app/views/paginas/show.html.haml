@@ -26,14 +26,15 @@
         %ul.coment
           - @comments.each do |c|
             %li
+              - username = username(c.user_id);
               = image_tag("home/noavatar.png", :width => 40, :height => 40)
               %p.name
-                Jose Alejandro
+                = username.nom
               %br/ 
               %p
                 =c.comment 
               %p.date 
-                =c.created_at
+                =c.created_at.to_date.to_s
 :plain
   <script>
     (function(d, s, id) {

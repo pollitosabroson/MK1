@@ -27,12 +27,14 @@ class PaginasController < ApplicationController
     @fotos = Mk1.find params[:id]
     @comment = Comment.new
     @comments = Comment.where(:commentable_id => @fotos).order('created_at DESC')
+    raise @comments.inspect
     @ranking = Ranking.new
     @fotos.increment
   end
   def comment
     @mk1 = Mk1.find params[:id]
-    @comment = @mk1.comments.new params_comment    
+    @comment = @mk1.comments.new params_comment
+    @comment.user_id =  current_user.id
     if @comment.save
       redirect_to show_path(params[:id])
     else

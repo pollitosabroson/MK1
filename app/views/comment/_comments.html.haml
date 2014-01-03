@@ -5,5 +5,5 @@
     %li.comments
       %p
         = f.text_area :comment, :placeholder => "It leaves your comment"
-  %p
-    =f.submit "Comment"
+  %p.comment
+    =f.submit "Comment", :class => "btn btn-primary"

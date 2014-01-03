@@ -92,6 +92,12 @@
       }
     }
   }
+  .social{
+    text-align: right;
+    .fb-share-button{
+      margin-right: 20px;
+    }
+  }
   .ranking{
     text-align: right;
     font-size: 1.3em;
@@ -100,6 +106,10 @@
     text-align: left;
     font-size: 1.3em;
     margin: 19px 0px 39px 89px;
+    .comment{
+      text-align: right;
+      margin: 10px 7px 0px 0px;
+    }
     p{
       label{
         vertical-align: top;

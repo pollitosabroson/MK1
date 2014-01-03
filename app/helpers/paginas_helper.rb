@@ -8,4 +8,9 @@ module PaginasHelper
     stats = OpenStruct.new(json)
     return stats
 	end
+	def username(user_id)
+	  nom = User.find(:id => user_id)
+	 username = OpenStruct.new(json)
+	 return username
+	end
 end
