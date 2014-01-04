@@ -1,17 +1,24 @@
-!!!
-%html
-  %head
-    %meta{:charset => "UTF-8"}
+!!! 5
+:plain
+  <!--[if lt IE 7]> <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>    <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>    <html lang="es" class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+%head
+  %meta{:charset => "UTF-8"}
+  - if current_page?('/')
     %title Volkswagen GTI
-    %meta{:content => "#MK1", :property => "og:title"}
-    %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}
-    %meta{:name => "description", :content => "#GTI. Take a picture of your volkswagen on instagramand show offto the other people."}
-    %meta{:content => "#MK1. Take a picture of your volkswagen on instagramand show offto the other people.", :property => "og:description"}
-    %meta{:content => "http://www.volksgit.com", :property => "og:url"}
-    %meta{:content => "#VolkswagenGTI", :property => "og:site_name"}
-    %meta{:content => '/social.jpg', :property => "og:image"}
-    %meta{:content => "IE=Edge", "http-equiv" => "X-UA-Compatible"}
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "Volkswagen GTI", :property => "og:title"}
+    %meta{:name => "robots", :content => "noindex"}
+  -else
+    %title
+      #{"#{yield(:titulo)} | " if content_for?(:titulo)} #VolksGTI
+    %meta{:content => "#{yield(:titulo)} | Volkswagen GTI", :property => "og:title"}
+  %link{ :rel => "shortcut icon", :href => "/favicon.ico", :type => "image/x-icon"}/
+  %meta{:name => "description", :content => yield(:descripcion)}
+  %meta{:content => yield(:url), :property => "og:url"}
+  %meta{:content => "Volkswagen GTI", :property => "og:site_name"}
+  %meta{:content => yield(:imagen), :property => "og:image"}
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
