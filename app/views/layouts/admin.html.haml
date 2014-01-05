@@ -25,5 +25,6 @@
               Total de fotos:
               = "#{Mk1.where(:publicado => true).count}/#{Mk1.count}"
           %li= link_to "Aprobadas",aprovado_path
-        = yield
+        .cuerpo
+          = yield
     = javascript_include_tag "application"

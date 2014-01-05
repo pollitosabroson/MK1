@@ -15,11 +15,12 @@ gem 'instagram'
 gem 'protected_attributes'
 gem 'turbolinks'
 gem 'kaminari'
-gem 'acts_as_commentable'
 gem 'omniauth' 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+gem 'acts-as-taggable-on'
+gem 'awesome_nested_set'
 
 group :doc do
   gem 'sdoc', require: false

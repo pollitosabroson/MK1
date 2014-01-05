@@ -41,6 +41,8 @@ MK1::Application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Set to :debug to see everything in the log.
   config.log_level = :info

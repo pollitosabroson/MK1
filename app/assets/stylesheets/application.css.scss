@@ -3,16 +3,23 @@
  *= require_tree
  *= requiere reset
  */
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400italic);
+
+
+
+
  body{
 //  background: rgb(207, 4, 4);
   background: #000;
+ }
+ .cuerpo{
+  width: 1040px;
  }
 .header{
   //width: 1040px;
   margin: 0 auto;
   background: #1C8BC1;
   height: 80px;
+  font-family: tahoma;
   ul{
     padding: 22px 0px 0px 0px;
   	li{
@@ -73,6 +80,7 @@
   margin-top: 20px;
   background: #fff;
   margin-bottom: -150px;
+  font-family: helvetica;
 }
 .footer{
   height: 150px;

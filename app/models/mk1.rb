@@ -1,8 +1,7 @@
 class Mk1 < ActiveRecord::Base
   paginates_per 5
-  acts_as_commentable
-  attr_accessible :instagram_id, :instagram_link, :pic_large, :pic_med, :pic_thumb, :username, :publicado, :fullname, :visit,:votable, :voter, :vote_scope
-  has_many :commnets
+  attr_accessible :instagram_id, :instagram_link, :pic_large, :pic_med, :pic_thumb, :username, :publicado, :fullname, :visit,:tag_list
+  acts_as_taggable
   def to_param
     "#{id}-#{username}"
   end

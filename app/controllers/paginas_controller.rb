@@ -6,7 +6,7 @@ class PaginasController < ApplicationController
   def new_stuff
     Instagram.process_subscription(request.body.read) do |handler|
       handler.on_tag_changed do |tag, data|
-        @inst = Instagram.tag_recent_media("mk1");
+        @inst = Instagram.tag_recent_media("gti");
         @inst.each do |data|
           mkfoto = Mk1.find_or_create_by_instagram_id(
             :instagram_id => data.id,
